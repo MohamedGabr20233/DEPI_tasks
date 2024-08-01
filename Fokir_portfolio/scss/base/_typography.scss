@@ -1,0 +1,165 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
+//* section header
+.section_header {
+  @include flex_center-column;
+  &-text {
+    font-size: 4rem;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 900;
+    color: $color--secondary;
+    margin-bottom: 1rem;
+  }
+
+  &-line {
+    width: 65%;
+    height: 1px;
+    background: $color--primary;
+    display: block;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 60%;
+      background: $color--primary;
+      top: -0.4rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 60%;
+      background: $color--primary;
+      top: 0.4rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+}
+
+.hero_header {
+  font-family: 'Source Sans 3', sans-serif;
+  @include flex_center-column;
+  color: $color--white;
+  &_text {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: inherit;
+    line-height: 2.88rem;
+  }
+
+  &_main {
+    font-size: 7rem;
+    color: $color--primary;
+    text-transform: uppercase;
+    line-height: 8.4rem;
+    margin: 1.5rem 0;
+  }
+
+  &_animation {
+    width: 0;
+    border-right: 0.125rem solid $color--white;
+    position: relative;
+    white-space: nowrap;
+    animation: width_controller 10s steps(25) infinite;
+    overflow: hidden;
+    .static_text,
+    .dynamic_text {
+      font-weight: 400;
+      font-size: 2.6rem;
+
+      white-space: nowrap;
+      position: relative;
+    }
+    .dynamic_text {
+      direction: ltr;
+      &::after {
+        content: 'sginer';
+        position: absolute;
+        top: 50%;
+
+        font-weight: 400;
+        font-size: 2.6rem;
+        transform: translate(0, -50%);
+        color: white;
+
+        padding-right: 0.5rem;
+
+        animation: changeContent 10s steps(15) infinite;
+      }
+    }
+  }
+}
+
+.about {
+  // right box
+  &_personal {
+    font-family: 'Source Sans 3', sans-serif;
+    color: $color--paragraph;
+    &-title {
+      font-size: 3.2rem;
+
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+
+    &-paragraph {
+      font-family: 'roboto', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 2.4rem;
+    }
+
+    &-info {
+      font-family: 'roboto', sans-serif;
+      font-size: 1.4rem;
+      text-transform: capitalize;
+
+      strong {
+        color: black;
+      }
+    }
+  }
+}
+
+.product_filter {
+  font-family: Roboto, sans-serif;
+  color: $color--secondary;
+  font-size: 1.6rem;
+  padding: 3px 12px;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  width: fit-content;
+
+  transition: 0.25s color;
+  &:focus {
+    color: $color--primary;
+  }
+}
+
+.footer {
+  &_text {
+    margin: 2rem 0;
+    font-size: 1.6rem;
+    font-family: roboto, sans-serif;
+    color: $color--white;
+  }
+
+  &_link {
+    font-family: roboto, sans-serif;
+    color: $color--primary;
+    text-decoration: none;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}

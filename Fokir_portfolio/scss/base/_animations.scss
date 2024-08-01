@@ -1,0 +1,86 @@
+// =========================================================================
+//* JS animations
+
+.nav_btn_animation-start {
+  transform: rotate(45deg) !important;
+  &::before {
+    opacity: 0 !important;
+  }
+
+  &::after {
+    transform: rotate(-90deg) !important;
+    top: 0 !important;
+  }
+}
+
+// =============================================================================
+// header text animations
+@keyframes changeContent {
+  40% {
+    content: 'sginer';
+  }
+
+  49% {
+    content: 'sgine';
+  }
+  50% {
+    content: 'sgin';
+  }
+  51% {
+    content: 'sgi';
+  }
+  52% {
+    content: 'sg';
+  }
+
+  53% {
+    content: 'v';
+  }
+  56% {
+    content: 've';
+  }
+  57% {
+    content: 'vel';
+  }
+  58% {
+    content: 'vele';
+  }
+  59% {
+    content: 'velep';
+  }
+  60% {
+    content: 'velepo';
+  }
+  61% {
+    content: 'velepor';
+  }
+
+  100% {
+    content: '';
+  }
+}
+
+@keyframes width_controller {
+  10% {
+    width: 0; //hold for 1 sec
+  }
+  35%,
+  43% {
+    width: 30rem;
+  }
+
+  52% {
+    width: 22.5rem;
+  }
+  65% {
+    width: 31rem;
+  }
+  75% {
+    width: 31rem;
+  }
+
+  90%,
+  100% {
+    width: 0; //hold for 1 sec
+  }
+}

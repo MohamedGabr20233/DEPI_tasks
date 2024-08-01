@@ -1,0 +1,296 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
+.card {
+  //? card service box
+  &_service {
+    @include flex_center-column;
+    font-family: 'Source Sans 3', sans-serif;
+    width: 25%;
+    margin-top: 8px;
+    padding: 0 4px;
+    padding-top: 2.4rem;
+    padding-bottom: 4.8rem;
+
+    transition: 0.3s all;
+
+    &-logo {
+      transition: 0.3s all;
+      i {
+        color: $color--primary;
+        font-size: 3rem;
+      }
+    }
+
+    &_body {
+      padding: 1.6rem;
+      text-align: center;
+    }
+
+    &_text {
+      &-main {
+        color: $color--secondary;
+        font-size: 2.24rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+      }
+
+      &-paragraph {
+        font-size: 1.6rem;
+        color: $color--paragraph;
+        line-height: 2.4rem;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.5);
+      background-color: $color--white;
+    }
+    &:hover > &-logo {
+      scale: 1.2;
+    }
+
+    @include respond(tab-port) {
+      width: 50%;
+    }
+    @include respond(phone) {
+      width: 100%;
+      max-width: 40rem;
+    }
+  }
+
+  //? products .card
+  &_product {
+    position: relative;
+    cursor: pointer;
+
+    border-radius: 4px;
+    overflow: hidden;
+    // img
+
+    img {
+      width: 100%;
+    }
+    // overlay
+    &_overlay {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #00000073;
+      opacity: 0;
+
+      transition: 0.25s all;
+    }
+
+    &_icon {
+      font-size: 2.5rem;
+      color: $color--primary;
+      position: absolute;
+      bottom: 2rem;
+      right: 3rem;
+    }
+
+    &:hover > &_overlay {
+      opacity: 1;
+    }
+  }
+
+  //* review cards
+
+  &_review {
+    width: 1;
+    max-width: 90.7rem;
+    padding: 2rem 0;
+    height: 29rem;
+    margin-bottom: 3rem;
+    background: $color--bg-2;
+    position: relative;
+    overflow: hidden;
+
+    position: absolute;
+    transition: all 1s;
+
+    opacity: 0;
+
+    // the bg line
+    &::after {
+      content: '';
+      position: absolute;
+      left: -14.6rem;
+      top: -6.2rem;
+      width: 45%;
+      transform: rotate(315deg);
+      height: 19rem;
+      background-color: $color--primary;
+      z-index: 0;
+
+      @include respond(tab-small) {
+        transform: rotate(0);
+        width: 100%;
+        left: 0;
+        top: -9rem;
+      }
+    }
+    @include flex_center-row;
+    &_box-pic {
+      position: relative;
+      z-index: 1;
+
+      width: 40%;
+      min-width: 16rem;
+      text-align: center;
+    }
+    &-pic {
+      border-radius: 50%;
+      height: 70%;
+      width: 70%;
+
+      @include respond(tab-small) {
+        width: 50%;
+        height: 50%;
+      }
+    }
+
+    // content right box
+
+    &_content {
+      text-align: start;
+
+      font-family: 'source pro 3', sans-serif;
+      padding: 1.6rem;
+      // the name
+      &-name {
+        font-size: 2.6rem;
+        text-transform: capitalize;
+        margin-bottom: 8px;
+        color: $color--review--primary;
+      }
+      &-location {
+        @include flex_center-row;
+        justify-content: start !important;
+        gap: 5px;
+        color: RGB(119, 119, 119);
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      &-text {
+        font-family: Roboto, sans-serif;
+        color: $color--paragraph;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        margin: 8px 0 16px 0;
+        font-style: italic;
+      }
+
+      &-rate {
+        font-size: 1.6rem;
+        color: $color--review---stars;
+      }
+    }
+    &-active {
+      position: relative;
+
+      opacity: 1;
+    }
+
+    @include respond(tab-small) {
+      @include flex_center-column;
+      height: fit-content;
+      border-radius: 0.5rem;
+    }
+  }
+
+  //*blog cards
+
+  &_blog {
+    width: 32.333333%;
+    margin-top: 2.4rem;
+    border-radius: 4px;
+    overflow: hidden;
+
+    background-color: $color--white;
+
+    @include respond(tab-port) {
+      width: 70%;
+      height: 50rem;
+      margin-top: 1rem;
+    }
+    // the img box
+    &-img {
+      width: 100%;
+      max-width: 50rem;
+      height: 15vw;
+      border-radius: 4px;
+      @include respond(tab-port) {
+        width: 100%;
+        height: fit-content;
+      }
+      iframe,
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      iframe {
+        @include respond(tab-port) {
+         
+          height: 25rem;
+        }
+      }
+    }
+
+    // card body
+
+    &_body {
+      @include flex_center-column;
+      align-items: start;
+      padding: 1.6rem;
+      font-family: Roboto, sans-serif;
+
+      // body texts
+
+      &-date {
+        font-size: 1.6rem;
+        color: $color--paragraph;
+        margin-bottom: 1rem;
+      }
+
+      &-header {
+        font-family: 'Source Sans 3', sans-serif;
+        font-size: 2.4rem;
+        color: $color--secondary;
+        transition: 0.25s color;
+        cursor: pointer;
+
+        &:hover {
+          color: $color--primary;
+        }
+      }
+
+      &-paragraph {
+        font-size: 1.6rem;
+        color: $color--paragraph;
+        margin: 1.6rem 0;
+        line-height: 2.4rem;
+      }
+
+      &-link {
+        font-family: 'Source Sans 3' Roboto sans-serif;
+        text-decoration: none;
+        color: $color--secondary;
+        font-size: 1.6rem;
+        margin-bottom: 1.6rem;
+        text-transform: uppercase;
+        transition: 0.25s color;
+        cursor: pointer;
+
+        &:hover {
+          color: $color--primary;
+        }
+      }
+    }
+  }
+}

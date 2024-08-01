@@ -1,0 +1,434 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
+.hero {
+  &_section {
+    width: 100%;
+    height: 100vh;
+    min-height: 5rem;
+    padding: 0;
+    background: url(../pics/hero_section/hero_main.jpg) no-repeat center;
+
+    background-size: cover;
+  }
+  &_container {
+    height: 100%;
+    width: 100%;
+    @include flex_center-row;
+    background: #000000a7;
+  }
+}
+
+// about section
+
+.about {
+  //section
+
+  &_container {
+    @include flex_center-row;
+
+    margin: 4.8rem 0;
+    gap: 4rem;
+
+    @include respond(tab-small) {
+      @include flex_center-column;
+    }
+  }
+  // left box
+  &_profile {
+    width: 33.33333%;
+    max-width: 37.5rem;
+
+    position: relative;
+    border: 7px solid #000000;
+    height: fit-content;
+    border-radius: 3px;
+    margin-bottom: 5rem;
+    @media (max-width: 1000px) {
+      height: 100%;
+      margin-bottom: 0;
+      border: none;
+    }
+    @include respond(tab-small) {
+      width: 100%;
+    }
+  }
+  // img box
+  &_img-box {
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    transform: translate(1.5rem, 2rem);
+    border-radius: 3px;
+
+    img {
+      width: 100%;
+
+      @media (max-width: 1000px) {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &:hover > .about_overlay {
+      top: 0%;
+    }
+
+    @media (max-width: 1000px) {
+      transform: translate(0, 0);
+      height: 38.5rem;
+    }
+
+    @include respond(tab-small) {
+      height: fit-content;
+    }
+  }
+  // left box overlay
+  &_overlay {
+    position: absolute;
+    transition: 0.6s all;
+    top: 100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.219);
+
+    @include flex_center-row;
+
+    // the content
+    &-content {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      font-size: 2rem;
+      cursor: pointer;
+      color: white;
+      i {
+        padding: 0.5rem;
+        transition: 0.5s all;
+        &:hover {
+          color: $color--primary;
+        }
+      }
+    }
+  }
+  // right box
+  &_personal {
+    width: 59%;
+    position: relative;
+    &-title {
+      margin-bottom: 2rem;
+      padding-left: 1rem;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0.4rem;
+        height: 55%;
+        left: 0;
+        top: 20%;
+        transform: translate(0 -50%);
+
+        background: $color--primary;
+      }
+    }
+    &-paragraph {
+      padding-bottom: 2rem;
+      margin-bottom: 1.5rem;
+
+      border-bottom: 1px dotted $color--paragraph;
+    }
+
+    &-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 0.8rem;
+      white-space: nowrap;
+    }
+
+    &-btns {
+      position: absolute;
+      bottom: -10rem;
+      display: flex;
+      gap: 2rem;
+    }
+  }
+}
+
+//* Our service section
+
+.service {
+  // section
+  &_section {
+    background: $color--bg-2;
+    width: 100%;
+    @include flex_center-column;
+  }
+  // container
+  &_container {
+    @include flex_center-row;
+    flex-wrap: wrap;
+    margin-top: 1.6rem;
+  }
+}
+
+// product
+
+.product {
+  // section
+  &_section {
+    width: 100%;
+    @include flex_center-column;
+  }
+  // container
+  &_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    height: 66.2rem;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2.4rem;
+    margin-top: 8px;
+
+    @include respond(tab-land) {
+      height: fit-content;
+    }
+
+    //1200px
+    @media (max-width: 1200px) {
+      height: fit-content;
+    }
+
+    // 990px
+    @include respond(tab-port) {
+      grid-template-columns: repeat(2, 1fr);
+
+      height: fit-content;
+    }
+    // 750px
+    @include respond(tab-small) {
+      grid-template-columns: repeat(1, 47.6rem);
+
+      height: fit-content;
+    }
+  }
+}
+
+//* work section
+
+.work {
+  // section
+  &_section {
+    background: #f1f1f1;
+    width: 100%;
+    @include flex_center-column;
+  }
+  // container
+  &_container {
+    @include flex_center-row;
+    flex-wrap: wrap;
+    margin-top: 1.6rem;
+  }
+
+  // box
+
+  &_box {
+    @include flex_center-column;
+    font-family: 'Source Sans 3', sans-serif;
+    width: 25%;
+    margin-top: 8px;
+    padding: 0 4px;
+    &-logo {
+      transition: 0.3s all;
+      i {
+        color: $color--primary;
+        font-size: 3rem;
+      }
+    }
+
+    // body
+    &_body {
+      padding: 1.6rem;
+      text-align: center;
+    }
+
+    &_text {
+      &-main {
+        color: $color--secondary;
+        font-size: 2.6rem;
+        font-weight: 700;
+      }
+
+      &-paragraph {
+        font-size: 1.6rem;
+        color: $color--paragraph;
+        line-height: 2.4rem;
+      }
+    }
+
+    @include respond(tab-small) {
+      margin-bottom: 3rem;
+      width: 80%;
+    }
+  }
+}
+
+//feedback section
+
+.feedback {
+  &_section {
+    @include flex_center-column;
+    width: 100%;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  &_container {
+    height: 50rem;
+    margin-top: 1.5rem;
+    padding: 5em 1.2rem 4.8rem 12px !important;
+    @include flex_center-column;
+    &_slider {
+      @include flex_center-row;
+
+      position: relative;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+//* blog section
+
+.blog {
+  &_section {
+    @include flex_center-column;
+    width: 100%;
+    font-family: 'Source Sans 3', sans-serif;
+    background: $color--bg-2;
+  }
+  // container
+  &_container {
+    @include flex_center-row;
+    margin-top: 1.6rem;
+    gap: 2rem;
+
+    @include respond(tab-port) {
+      @include flex_center-column;
+    }
+  }
+}
+
+// contact form
+.contact {
+  &_section {
+    @include flex_center-column;
+    width: 100%;
+  }
+  // container
+  &_container {
+    @include flex_center-row;
+    width: 100%;
+    margin-top: 1.6rem;
+    // inputs
+
+    .input {
+      outline: none;
+      padding-inline: 12px;
+      padding-block: 6px;
+      width: calc(100%);
+      border: 0.0625rem solid #ccc;
+      border-radius: 4px;
+      margin: 1.6rem;
+      display: inline-block;
+      font-size: 1.6rem;
+      font-family: 'source sans 3', 'roboto', sans-serif;
+      @include respond(tab-small) {
+        margin: 2rem 0;
+      }
+      &_area {
+        width: 80%;
+      }
+      &:focus {
+        border: 0.0625rem solid #ff305b;
+        box-shadow: 0 0 0.625rem #cfb8bc;
+      }
+      &-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include respond(tab-small) {
+          flex-direction: column;
+        }
+        // btn
+
+        a {
+          font-size: 1.6rem;
+          font-family: 'source sans 3', 'roboto', sans-serif;
+          text-transform: uppercase;
+          width: fit-content;
+          text-decoration: none;
+          @include respond(tab-small) {
+            margin-right: auto;
+          }
+        }
+      }
+      &-name,
+      &-email {
+        width: 45%;
+
+        @include respond(tab-small) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  &_section {
+    background: $color--secondary;
+    @include flex_center-column;
+    width: 100%;
+  }
+
+  &_container {
+    @include flex_center-column;
+    width: 100%;
+    margin-top: 1.6rem;
+  }
+ &_overlay {
+    position: absolute;
+    transition: 0.6s all;
+    top: 100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.219);
+
+    @include flex_center-row;
+
+    // the content
+    &-content {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      font-size: 2rem;
+      cursor: pointer;
+      color: white;
+      i {
+        padding: 0.5rem;
+        transition: 0.5s all;
+        &:hover {
+          color: $color--primary;
+        }
+      }
+    }
+  }
+
+  &:hover > .footer_overlay {
+      top: 0%;
+    }
+    
+}

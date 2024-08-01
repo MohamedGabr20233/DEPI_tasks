@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import '../abstracts/mixins';
+html {
+  font-size: 62.5%;
+
+  // @include respond(tab-land) {
+  //   font-size: 56.255%; //1rem = 9px = 9/16 = 56.25%
+  // }
+  // @include respond(tab-port) {
+  //   font-size: 50%; //1rem = 8px = 8/16 = 50%
+  // }
+
+  // @include respond(tab-small) {
+  //   font-size: 43.75%; //1rem = 7px = 7/16 = 43.75%
+  // }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+ 
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include flex_center-column;
+}
+
+.container_responsive-width {
+  max-width: 130rem;
+  padding: 1.6rem 1.2rem;
+  width: 100%;
+  // 1300px
+  @include respond(tab-land) {
+    max-width: 112.4rem;
+  }
+
+  //1200px
+  @media (max-width: 1200px) {
+    max-width: 94rem;
+  }
+  // 990px
+  @include respond(tab-port) {
+    max-width: 70rem;
+  }
+
+  @include respond(tab-small){
+    @include flex_center-column
+  }
+}
+section {
+  padding: 4.8rem 0;
+}
+
+// service section
