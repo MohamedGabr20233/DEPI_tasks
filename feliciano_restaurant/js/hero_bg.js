@@ -10,7 +10,7 @@ const btnHeroRight = document.querySelector('.btn_hero-right');
 let HeroCounter = 0;
 
 const bgMap = new Map([
-  [1, ['https://raw.githubusercontent.com/MohamedGabr20233/DEPI_tasks/main/feliciano_restaurant/pics/hero_Section/bg_1.jpg', 'best restaurant']],
+  [1, ['pics/hero_Section/bg_1.jpg', 'best restaurant']],
   [2, ['https://raw.githubusercontent.com/MohamedGabr20233/DEPI_tasks/main/feliciano_restaurant/pics/hero_Section/bg_2.jpg', 'Nutritious & Tasty']],
   [3, ['https://raw.githubusercontent.com/MohamedGabr20233/DEPI_tasks/main/feliciano_restaurant/pics/hero_Section/bg_3.jpg', 'Delicious Specialties']],
 ]);
