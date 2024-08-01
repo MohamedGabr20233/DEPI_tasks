@@ -1,0 +1,352 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  scroll-behavior: smooth;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.nav {
+  &_box {
+    width: 100%;
+    height: fit-content;
+    padding: 2rem 3rem;
+    background-color: rgb(33, 37, 41);
+    color: rgb(255, 200, 0);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+  }
+
+  &_content_box {
+    width: 100%;
+    max-width: 160rem;
+    &::after {
+      content: '';
+      clear: both;
+      display: table;
+    }
+  }
+
+  &_logo {
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: 700;
+    float: left;
+    width: 40%;
+  }
+
+  &_list {
+    float: right;
+    text-align: end;
+    width: 60%;
+  }
+
+  &_item {
+    list-style: none;
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 2rem;
+    &:not(:last-child){
+      padding-right: 3rem;
+    }
+    a,
+    a:visited,
+    :link {
+      color: white;
+      text-decoration: none;
+      transition: 0.2s all;
+      &:hover {
+        color: rgb(255, 200, 0);
+      }
+    }
+  }
+}
+
+.hero {
+  &_section {
+    background-image: url(../pics/header-bg.jpg);
+    height: 94vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  &_content {
+    padding: 20rem 0;
+  }
+
+  &_btn,
+  &_btn:visited,
+  &_btn:link {
+    padding: 1.5rem 1.5rem;
+    color: white;
+    background-color: rgb(255, 200, 0);
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    font-weight: normal;
+
+    &:hover {
+      background-color: rgb(255, 200, 0, 0.3);
+    }
+  }
+}
+
+.first_header {
+  font-size: 5rem;
+  color: white;
+
+  text-align: center;
+  line-height: 1.4;
+  font-weight: normal;
+  p {
+    font-weight: 500;
+    font-size: 4rem;
+    font-style: italic;
+    text-transform: capitalize;
+  }
+}
+
+// service section
+
+.service {
+  &_section {
+    padding: 10rem 0;
+
+    text-align: center;
+
+    p {
+      font-size: 1.6rem;
+      color: RGB(108, 117, 125);
+      font-style: italic;
+    }
+  }
+
+  &_box {
+    height: fit-content;
+    width: 30%;
+    display: inline-block;
+    margin-left: 2rem;
+    padding: 2rem;
+
+    .icon {
+      font-size: 5rem;
+      color: white;
+      height: 10rem;
+      width: 10rem;
+      background: rgb(255, 200, 0);
+      border-radius: 50%;
+      position: relative;
+      margin: auto;
+      i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  &_text {
+    font-size: 1.8rem !important;
+  }
+}
+.second_header {
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.third_header {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 1rem;
+}
+
+.portfolio {
+  &_section {
+    height: fit-content;
+    padding: 5rem;
+    width: 100%;
+    background: #f8f9fa;
+    text-align: center;
+  }
+
+  &_header {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+  &_paragraph {
+    color: RGB(112, 119, 125);
+    font-size: 1.6rem;
+
+    margin-bottom: 1rem;
+  }
+}
+
+.card {
+  width: 43rem;
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  text-transform: capitalize;
+  padding-bottom: 1rem;
+  position: relative;
+  background: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  &_img {
+    width: 100%;
+    height: 32.2rem;
+
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &::after {
+      content: '+';
+      color: #fff;
+      font-size: 5rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: RGB(255, 165, 0, 0.6);
+      opacity: 0;
+      transition: 0.2s all;
+    }
+  }
+  &_header {
+    font-size: 2.4rem;
+    color: #212529;
+    margin: 1rem;
+    font-weight: 700;
+  }
+
+  &_paragraph {
+    font-size: 1.8rem;
+    color: RGB(112, 119, 125);
+  }
+
+  &:hover > &_img::after {
+    opacity: 1;
+  }
+}
+
+.about {
+  &_section {
+    text-align: center;
+    padding: 10rem;
+    border-bottom: 1rem solid #f8f9fa;
+  }
+
+  &_paragraph {
+    font-size: 1.6rem;
+  }
+}
+
+.partner {
+  &_section {
+    padding: 8rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  &_svg {
+    width: 20rem;
+    margin: 0 5rem;
+    margin-bottom: 5rem;
+    display: inline-block;
+  }
+}
+.contact {
+  &_section {
+    text-align: center;
+    height: 45rem;
+    background-image: url(../pics/map-image.jpg);
+    background-color: rgb(0 0 0 / 70%);
+    padding-top: 1rem;
+  }
+
+  &_header {
+    color: white;
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+  }
+  &_paragraph {
+    color: white;
+    font-size: 1.6rem;
+  }
+
+  &_form {
+    height: 30.1rem;
+    margin-top: 3rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    .left_inputs {
+      display: inline-block;
+      width: 45%;
+      height: 80%;
+      margin-right: 1rem;
+      input {
+        width: 100%;
+        height: 30%;
+        border-radius: 0.5rem;
+        padding: 0 1rem;
+        float: left;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .right_inputs {
+      display: inline-block;
+      width: 45%;
+      height: 81%;
+
+      .text_area {
+        padding: 2rem;
+        float: right;
+        width: 100%;
+        height: 102%;
+        ::placeholder {
+          color: black;
+        }
+      }
+    }
+    .btn {
+      margin-left: 46%;
+    }
+
+    input[type='submit'] {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      border-radius: 0.8rem;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      color: #ffffff;
+      background: #ffc800;
+      transition: 0.25s all;
+      display: block;
+
+      &:hover {
+        background: #c39900;
+      }
+    }
+  }
+}
