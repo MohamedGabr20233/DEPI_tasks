@@ -288,7 +288,7 @@ ORDER : Base + typography >  general layout + grid > page layout > component
   align-items: center;
   justify-content: start;
   width: 100%;
-  background-image: url(../pics/hero_Section/bg_3.jpg);
+  background-image: url(../pics/hero_section/bg_3.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
