@@ -1,0 +1,247 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.footer {
+  &_box {
+    background-image: url(../pics/hero_section/textured-bg-brown-min.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: fit-content;
+    margin: 1.59rem 0 0 0;
+    padding: 9.775rem 0 3.1875rem 0;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &::before {
+      content: '';
+      width: 100%;
+      height: 45px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      background: url(../pics/hero_section/paper-edge.webp) no-repeat bottom center;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+  }
+  &_logo {
+    position: absolute;
+    width: 100%;
+    height: 9rem;
+    text-align: center;
+    top: -4rem;
+    left: 0;
+    z-index: 100;
+  }
+
+  // content
+
+  &_content {
+    width: 100%;
+    max-width: 128rem;
+  }
+
+  //lists
+
+  &_list {
+    height: 100%;
+    padding-right: 2rem;
+    &_box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: fit-content;
+      margin: 0 2rem;
+      flex-wrap: wrap;
+    }
+
+    &_header {
+      line-height: 1.12;
+      font-size: 1.6rem;
+      font-family: lora, sans-serif;
+      text-transform: capitalize;
+      color: $color--primary;
+      font-weight: 500;
+      margin: 3.85rem 0 1.3rem 0;
+    }
+
+    //list items
+    &_item {
+      list-style: none;
+      font-family: lato, sans-serif;
+      position: relative;
+      font-size: 1.4em;
+      text-transform: uppercase;
+      line-height: 1.9;
+
+      a {
+        text-decoration: none;
+        color: RGB(139, 164, 122);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // contact box
+  &_contact_box {
+    height: fit-content;
+    margin: 2rem;
+  }
+  &_list_contact {
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    height: fit-content;
+
+    &_icon {
+      text-decoration: none !important;
+      i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 15px;
+        line-height: 3.2rem;
+
+        margin-right: 5.25px;
+
+        border-radius: 50%;
+        background: #dedac8;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        color: white;
+
+        transition: 0.25s all;
+        &:hover {
+          color: $color--primary--light;
+        }
+      }
+
+      span {
+        background: black;
+        padding: 0px 5px;
+        color: white;
+        font-size: 12px;
+        font-weight: normal;
+        text-transform: capitalize;
+        font-family: sans-serif;
+        position: absolute;
+
+        bottom: -28px;
+        left: 40%;
+        opacity: 0;
+        cursor: default;
+      }
+
+      &:hover > span {
+        transition: 0.25s all 0.5s;
+        opacity: 1;
+      }
+    }
+  }
+  // the form
+  &_contact_form {
+    display: flex;
+    align-items: center;
+
+    // the email
+    &-email {
+      align-self: stretch;
+      border: 1px solid rgb(180, 187, 195);
+      font-size: 1.6rem;
+      font-family: lato, sans-serif;
+      font-weight: normal;
+      color: black;
+      padding-left: 10px;
+      &::placeholder {
+        color: rgb(180, 187, 195);
+      }
+
+      &:hover {
+        border-color: black;
+      }
+    }
+
+    // the button
+
+    &-btn {
+      margin-top: 0 !important;
+      font-size: 1.3rem !important;
+      font-family: lato, sans-serif !important;
+      line-height: 1.3rem;
+      text-transform: uppercase;
+      font-weight: 700 !important;
+      width: 85px;
+      height: 45px;
+      padding: 0 !important;
+    }
+  }
+
+  &_under {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include respond(tab-small) {
+      flex-direction: column;
+      justify-content: center;
+      gap: 3rem;
+    }
+  }
+
+  // partners
+  &_partners {
+    width: 33.3333333%;
+    img {
+      width: 100%;
+    }
+    @include respond(tab-small) {
+      width: 80%;
+    }
+  }
+
+  //  copyright
+
+  &_copyright {
+    font-family: lato, sans-serif;
+    font-size: 1.168rem;
+    color: RGB(31, 30, 30);
+    font-weight: 400;
+    width: 33.333333%;
+    text-align: center;
+    @include respond(tab-small) {
+      width: 80%;
+      font-size: 2.168rem;
+    }
+  }
+
+  // the payment list
+  &_payment_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 33.33333%;
+    height: fit-content;
+    @include respond(tab-small) {
+      width: 80%;
+    }
+    // icons
+    &_item-icon {
+      font-size: 30px;
+      list-style: none;
+      color: rgb(83, 82, 80);
+    }
+  }
+}

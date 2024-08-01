@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import '../abstracts/mixins';
+html {
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.255%; //1rem = 9px = 9/16 = 56.25%
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //1rem = 8px = 8/16 = 50%
+  }
+
+  @include respond(tab-small) {
+    font-size: 43.75%; //1rem = 7px = 7/16 = 43.75%
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  height: fit-content;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include section_flex_column;
+}
+
+.container {
+  width: 100%;
+  max-width: 120.563rem;
+  padding: 0 3.7188rem;
+
+  @include section_flex_column;
+}

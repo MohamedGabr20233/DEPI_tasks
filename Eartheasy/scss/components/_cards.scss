@@ -1,0 +1,290 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+.card {
+  //* About Card
+  @include section_flex_column;
+  &_about {
+    position: relative;
+    width: 33%;
+    height: 19.424rem;
+
+    justify-content: center;
+
+    color: $color--white;
+    text-decoration: none;
+    // header
+    &_header {
+      font-size: 2.21rem;
+      font-family: lora, serif;
+      font-weight: 500;
+      font-style: italic;
+    }
+    // middle_text
+    &_text {
+      font-size: 1.7rem;
+      font-family: Lato, sans-serif;
+      text-transform: uppercase;
+      font-weight: 300;
+      margin-top: 0.5rem;
+    }
+
+    // background for every card
+    &-1 {
+      background-image: url(../pics/about_section/natural-cedar-planter-boxes-home.jpg);
+    }
+    &-2 {
+      background-image: url(../pics/about_section/cedar-garden-sheds.jpg);
+    }
+    &-3 {
+      background-image: url(../pics/about_section/deer-proof-garden-kits-home.jpg);
+    }
+
+    // 800px
+    @include respond(tab-small) {
+      width: 90%;
+      &_header {
+        font-size: 2rem;
+     
+      }
+      &_text {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  /////////////////////////////////////////////////
+
+  //* CARD SALES
+  &_sales {
+    @include section_flex_column;
+
+    &_img {
+      display: block;
+      width: 24.15rem;
+      height: 24.15rem;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      &:hover > .btn_card_layout {
+        opacity: 1;
+      }
+    }
+
+    //* card body
+
+    &_body {
+      padding-top: 1.3rem;
+      // product name
+      &_product-name {
+        font-family: lora, sans-serif;
+        font-size: 1.5rem;
+        color: $color--primary--dark;
+        margin-bottom: 0.9rem;
+        font-weight: 400;
+        transition: 0.2s color;
+        cursor: pointer;
+
+        &:hover {
+          color: gray;
+        }
+      }
+
+      //stars
+      &_stars {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        scale: 0.9;
+        span {
+          color: gold;
+        }
+      }
+
+      //reviews
+
+      &_reviews {
+        color: rgb(118, 164, 107);
+        font-weight: 300;
+        font-size: 1.3rem;
+        font-family: lora;
+      }
+    }
+
+    //* price
+
+    &_price {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      align-self: center;
+
+      width: 60%;
+      margin-top: 1rem;
+      font-size: 1.4rem;
+      font-family: lato, sans-serif;
+
+      cursor: default;
+      &-old {
+        text-decoration: line-through;
+        color: gray;
+      }
+
+      &-new {
+        color: $color--primary--light;
+      }
+    }
+
+    // sign
+    &_sign {
+      position: absolute;
+      top: 8%;
+      right: 10%;
+      width: 50px;
+      height: 50px;
+
+      z-index: 10000;
+      transform: rotate(45deg);
+      &-discount {
+        background: #e16559;
+      }
+      &-stock--out {
+        background: rgb(75, 59, 46);
+
+        &-text {
+          font-size: 1rem;
+        }
+      }
+      &_text {
+        @include center-div;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        font-family: Lato, Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        color: $color--white;
+        text-transform: uppercase;
+
+        &-discount {
+          font-size: 1.275rem;
+        }
+
+        &-stock--out {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  &_guide {
+    max-width: 40rem;
+    width: 100%;
+    height: 25rem;
+
+    background-size: cover;
+
+    padding: 1.5rem;
+
+    position: relative;
+
+    cursor: pointer;
+    // category type
+    &_category_type {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 1rem;
+      position: relative;
+      z-index: 10;
+    }
+    // svg
+    &-svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      img {
+        width: 100%;
+      }
+      .garden-img {
+        scale: 0.5;
+        margin-top: -0.8rem;
+      }
+    }
+
+    // text
+    &_text {
+      @include center-div;
+      z-index: 10;
+    }
+
+    &-1 {
+      background-image: url(../pics/guides_section/grow_box.jpg);
+    }
+
+    &-2 {
+      background-image: url(../pics/guides_section/live_box.jpg);
+    }
+
+    &-3 {
+      background-image: url(../pics/guides_section/travel_box.jpg);
+    }
+
+    &-4 {
+      background-image: url(../pics/guides_section/garden_box.jpg);
+    }
+
+    &-5 {
+      background-image: url(../pics/guides_section/family_box.jpg);
+    }
+
+    &-6 {
+      background-image: url(../pics/guides_section/garden_box-2.jpg);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(9, 0, 0, 0.4);
+      z-index: 1;
+    }
+  }
+  //* features card
+  &_features {
+    padding: 0 1rem;
+    text-align: center;
+    font-size: 1.7rem;
+    width: 30.2rem;
+    margin-bottom: 5.125rem;
+    // text
+    &_header {
+      font-family: lora, serif;
+      color: RGB(88, 86, 75);
+      padding-top: 2.975rem;
+      margin-bottom: 2.55rem;
+    }
+
+    &_paragraph {
+      color: RGB(31, 30, 30);
+
+      font-family: lato, sans-serif;
+
+      margin-bottom: 2.55rem;
+      font-weight: 300;
+      em {
+        font-style: italic;
+      }
+    }
+
+    // the link
+
+    &_link {
+      text-decoration: none;
+      color: $color--primary--light;
+      font-weight: 700;
+      font-family: lato, sans-serif;
+    }
+  }
+}

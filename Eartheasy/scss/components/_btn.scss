@@ -1,0 +1,68 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
+.btn {
+  border: 0;
+  font-family: lato, sans-serif;
+  cursor: pointer;
+  &_main {
+    background: $color--secondary;
+    padding: 1.411rem 3.62rem;
+    font-size: 1.8rem;
+    color: $color--white;
+    font-weight: 300;
+    margin-top: 2.4rem;
+    transition: 0.25s background-color;
+    &:hover {
+      background-color: $color--secondary--light;
+    }
+  }
+
+  &_card {
+    &_layout {
+      @include center-div;
+      @include section_flex_column;
+      gap: 0.5rem;
+      opacity: 0;
+      transition: 0.5s opacity;
+      width: 60%;
+    }
+
+    padding: 1.5rem;
+    margin-top: 0;
+
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-family: lato;
+    font-weight: 600;
+
+    background: $color--secondary--light;
+    &:hover {
+      background: $color--secondary;
+    }
+  }
+
+  &_guide {
+    padding: 1.5rem 2.15rem;
+    border: 1px solid rgb(138, 164, 121);
+    color: $color--primary--light;
+    background: transparent;
+
+    font-family: lato, sans-serif;
+    font-weight: 400;
+    font-size: 1.7rem;
+    margin: 3.1875rem 0 1.7rem 0;
+    cursor: pointer;
+    letter-spacing: 1.2px;
+    transition: 0.25s all;
+
+    &:hover {
+      color: $color--white;
+      background-color: rgb(138, 164, 121);
+    }
+  }
+
+  
+}
+

@@ -1,0 +1,49 @@
+@import '../abstracts/variables';
+
+.nav {
+  &_box {
+    height: 5.6rem;
+    padding: 0 3rem;
+    width: 100%;
+    background-image: url(../pics/hero_section/textured-bg-brown-min.webp);
+
+    display: flex;
+    justify-content: center;
+  }
+  &_content {
+    width: 100%;
+    max-width: 120rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // list
+  &_list {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: start;gap: 3rem;
+    list-style: none;
+  }
+  &_logo {
+    width: 25%;
+    max-width: 25rem;
+    min-width: 20rem;
+    position: relative;
+    z-index: 20;
+    img {
+      width: 100%;
+    }
+  }
+
+  &_icon {
+    &_box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 2.2rem;
+      color: $color--primary--light;
+    }
+  }
+}

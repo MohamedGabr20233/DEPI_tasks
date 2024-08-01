@@ -1,0 +1,133 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
+.first_header {
+  font-size: 5rem;
+  line-height: 7.5rem;
+  font-weight: 600;
+}
+
+//? Navigator
+
+.nav {
+  &_item {
+    a {
+      text-decoration: none;
+      color: $color--primary--light;
+      font-family: 'lato', sans-serif;
+      font-weight: 700;
+      font-size: 1.7rem;
+
+      transition: 0.25s all;
+      &:hover {
+        color: $color--primary;
+      }
+    }
+  }
+}
+
+//? hero Section
+
+.hero_header {
+  color: $color--white;
+  font-family: 'Lora', serif;
+
+  &_paragraph {
+    font-size: 2.09rem;
+    line-height: 3.08rem;
+    font-weight: 500;
+    margin-bottom: 2.86875rem;
+    padding: 0 0.85rem;
+  }
+}
+
+//? about Section
+
+.about {
+  &_text {
+    font-size: 1.95rem;
+    line-height: 4.25rem;
+    margin: 1.593rem 0 6.375rem 0;
+    text-align: center;
+    font-family: lora, sans-serif;
+    font-weight: 500;
+    color: $color--primary;
+  }
+}
+
+// page  splicer
+
+.page_heading_splicer {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  margin: 8.7125rem 0;
+
+  &-text {
+    box-sizing: content-box;
+    font-size: 2.7625rem;
+    display: inline-block;
+    width: fit-content;
+    padding: 0 5rem;
+    font-family: lora, serif;
+    background: white;
+    color: $color--primary;
+    font-weight: 500;
+  }
+  .line {
+    width: 100%;
+    z-index: -10;
+    @include center-div;
+    height: 3px;
+    background: $color--splicer;
+  }
+}
+.guide_header {
+  font-family: 'lora', serif;
+  color: RGB(64, 84, 64);
+  margin: 5.85rem 0 3rem 0;
+  font-weight: 500;
+  font-size: 2.65rem;
+}
+
+.card_guide {
+  &_category_type-text {
+    color: $color--white;
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-family: lato, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+  }
+
+  &_text {
+    color: $color--white;
+    font-family: lora, sans-serif;
+    width: 80%;
+    font-size: 1.79rem;
+    font-weight: 500;
+  }
+}
+
+.instagram_layout {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+
+
+  &_react{
+    font-size: 2rem;
+    gap: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+      font-size: 2rem;
+    }
+  }
+
+
+  &_text{
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+}
