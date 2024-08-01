@@ -4,4 +4,4 @@ THE "start bootstrap" website live-link: https://mohamedgabr20233.github.io/DEPI
 
 THE "Eartheasy" website live-link: https://mohamedgabr20233.github.io/DEPI_tasks/Eartheasy/
 
-THE "fokir portfolio" website live-link: https://mohamedgabr20233.github.io/DEPI_tasks/fokir_portfolio/
+THE "fokir portfolio" website live-link: https://mohamedgabr20233.github.io/DEPI_tasks/Fokir_portfolio/
