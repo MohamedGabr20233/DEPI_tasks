@@ -1,0 +1,29 @@
+@import '../abstracts/mixins';
+html {
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.255%; //1rem = 9px = 9/16 = 56.25%
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //1rem = 8px = 8/16 = 50%
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  height: fit-content; // overflow: hidden;
+  padding: 1rem;
+  padding-bottom: 0;
+  @include section_flex_column;
+}

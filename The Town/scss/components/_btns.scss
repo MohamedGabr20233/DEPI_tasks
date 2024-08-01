@@ -1,0 +1,55 @@
+.btn {
+  //* the go down button
+  &_home {
+    width: 8rem;
+    height: 8rem;
+    cursor: pointer;
+
+    border-radius: 50%;
+    margin-bottom: 10rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    transition: 0.5s background-color;
+
+    background: white;
+    svg {
+      transform: scale(0.45) translateY(0rem);
+      fill: rgb(197, 126, 125);
+      transition: 0.5s fill;
+    }
+    &:hover {
+      background-color: $color-primary;
+    }
+
+    &:hover > svg {
+      fill: white;
+    }
+  }
+
+  //* read More button
+
+  &_readMore,
+  &_readMore:visited,
+  &_readMore:link {
+    background-color: $color-primary;
+    color: #fff;
+    border-radius: 10rem;
+    padding: 1.5rem 3rem;
+    margin-bottom: 1rem;
+
+    text-decoration: none;
+    font-size: 2.16rem;
+    font-weight: normal;
+    width: fit-content;
+
+    &:hover {
+      background-color: rgb(115, 193, 246);
+    }
+    transition: 0.25s background-color;
+  }
+}

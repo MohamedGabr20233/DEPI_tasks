@@ -1,0 +1,111 @@
+@import '../abstracts/mixins';
+
+.home_section {
+  height: 100dvh;
+  min-height: 60rem;
+  width: 100%;
+
+  @include section_flex_column;
+
+  justify-content: space-between;
+  position: relative;
+
+  //background
+  background-image: url(../pics/town1.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.introduction {
+  // section
+  &_section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: fit-content;
+  }
+  // container
+  &_container {
+    width: 100%;
+    max-width: 127.6rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // information box
+
+  &_information {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+    //img area
+    &-img {
+      width: 50%;
+      height: 40rem;
+      img {
+        height: 100%;
+      }
+      @media (max-width: 900px) {
+        width: 100%;
+        @include section_flex_column;
+        margin-bottom: 2rem;
+      }
+
+      @include respond(phone) {
+        height: 30rem;
+      }
+    }
+    //text area
+    &-text {
+      width: 50%;
+      height: 40rem;
+      padding-left: 6.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @media (max-width: 900px) {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 900px) {
+      @include section_flex_column;
+      width: 100%;
+    }
+  }
+
+  &_feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 900px) {
+      @include section_flex_column;
+    }
+  }
+}
+
+.work {
+  // work section
+
+  &_section {
+    width: 100%;
+    max-width: 129rem;
+    @include section_flex_column;
+    height: fit-content;
+  }
+  // work container
+  &_container {
+    width: 100%;
+    height: 100%;
+  }
+
+  //text box at work section
+
+  &_text {
+    @include section_flex_column;
+  }
+}

@@ -1,0 +1,8 @@
+.stick_navbar {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  color: rgb(143, 143, 143) !important;
+  z-index: 10;
+  border-bottom: 1px solid rgba(143, 143, 143, 0.288);
+}

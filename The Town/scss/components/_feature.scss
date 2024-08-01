@@ -1,0 +1,52 @@
+.feature {
+  // *the boxes
+  &_box {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+    padding: 0 15px;
+    height: 36.114rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width: 900px) {
+      flex: 0 0 90%;
+      max-width: 90%;
+    }
+  }
+
+  &_svg {
+    height: 25rem;
+    position: relative;
+    margin-top: -8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 900px) {
+      margin-top: 0;
+    }
+
+    svg {
+      scale: 0.22;
+      fill: $color-primary;
+      @media (max-width: 900px) {
+        scale: 0.22;
+      }
+    }
+
+    &-2 {
+      margin-top: -8rem;
+      @media (max-width: 900px) {
+        margin-top: 0;
+      }
+    }
+
+    &-3 {
+      margin-top: -8.5rem;
+      @media (max-width: 900px) {
+        margin-top: 0;
+      }
+    }
+  }
+}
