@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import '../abstracts/mixins';
+.hero {
+  &_contact {
+    display: block;
+    color: var(--color--text--paragraph--light);
+    font-size: 1.4rem;
+    font-family: Poppins, Arial, sans-serif;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &_text {
+    @include center-absolute;
+
+    &-title {
+      font-size: 6rem;
+      font-family: Poppins, Arial, sans-serif;
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  &_text-header {
+    font-size: 8rem;
+    margin-bottom: 0 !important;
+    font-family: 'Great Vibes', cursive;
+    color: var(--color--primary);
+  }
+}
+
+.header_special {
+  font-family: 'Great Vibes', cursive;
+  color: var(--color--primary);
+  margin-bottom: -6rem !important;
+  text-align: center;
+  font-size: 10rem;
+  @include respond(tab-small) {
+    text-align: center !important;
+    margin-bottom: -5rem !important;
+  }
+}
+
+.header_secondary {
+  color: var(--color--text--header);
+  font-family: Poppins, Arial, sans-serif;
+  font-size: 5rem;
+  line-height: 6rem;
+  margin-bottom: 4.8rem !important;
+  font-weight: 900;
+  text-align: center;
+  @include respond(tab-small) {
+    margin-bottom: 5.8rem !important;
+  }
+}
+
+// restaurant section
+
+.restaurant {
+  &_header {
+    text-align: start;
+  }
+  &_title {
+    font-weight: 600;
+    text-align: start ;
+    @include respond(tab-small) {
+      text-align: center !important;
+    }
+  }
+
+  &_paragraph,
+  &_date {
+    font-family: Poppins, Arial, sans-serif;
+    color: var(--color--text--paragraph--light);
+
+    font-size: 1.7rem;
+    line-height: 3.4rem;
+    margin-bottom: 1.6rem !important;
+    @include respond(tab-small) {
+      text-align: center;
+    }
+  }
+
+  &_contact {
+    font-family: Poppins, Arial, sans-serif;
+    color: var(--color--primary);
+    font-size: 4rem;
+    font-weight: 700;
+    white-space: nowrap;
+
+    @include respond(tab-small) {
+      text-align: center;
+    }
+
+    @include respond(phone) {
+      font-size: 3rem;
+    }
+  }
+}
+
+//counter
+
+.counter {
+  &_box {
+    &-head {
+      font-family: Poppins, Arial, sans-serif;
+      font-size: 4.4rem;
+      font-weight: 600;
+      color: var(--color--primary);
+    }
+
+    &-text {
+      font-size: 1.4rem;
+      color: var(--color--text--paragraph--light);
+      font-weight: 500;
+    }
+  }
+
+  &_text {
+    font-family: Poppins, sans-serif;
+    font-size: 1.7rem;
+    line-height: 3.4rem;
+    color: var(--color--text--paragraph--light);
+  }
+}
+
+.service_box {
+  &-title {
+    font-family: Poppins, sans-serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 2rem !important;
+    text-align: center;
+  }
+
+  &-paragraph {
+    font-family: Poppins, sans-serif;
+    font-size: 1.7rem;
+    line-height: 3.4rem;
+    padding-bottom: 1.6rem !important;
+    color: var(--color--text--paragraph--light);
+    text-align: center;
+  }
+}
+
+//* footer
+.footer {
+  &_title {
+    font-family: Poppins, sans-serif;
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 4rem !important;
+    font-weight: 700;
+  }
+
+  &_paragraph {
+    font-family: Poppins, sans-serif;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    color: RGBA(255, 255, 255, 0.7);
+    margin-bottom: 1.6rem !important;
+  }
+
+  &_social_link {
+    a {
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,183 @@
+footer {
+  @include flex-center-column;
+  background: #141313;
+}
+
+.footer {
+  &_container {
+    @include flex-center-row;
+    height: 28.1rem;
+    gap: 2rem;
+    @include respond(tab-port) {
+      flex-wrap: wrap;
+      height: fit-content;
+    }
+  }
+
+  &_box {
+    width: 25%;
+    height: 100%;
+    @include flex-center-column;
+    align-items: start;
+    padding: 0 1.5rem !important;
+
+    @include respond(tab-port) {
+      width: 48%;
+    }
+
+    @include respond(tab-small) {
+      width: 90%;
+    }
+
+    &-3 {
+      padding-right: 0 !important;
+    }
+    &-4 {
+      height: 100%;
+    }
+  }
+
+  &_social {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+
+    margin: 1.6rem 0 !important;
+
+    &_link {
+      list-style: none;
+      font-size: 2rem;
+
+      a {
+        margin-right: 1rem !important;
+        @include flex-center-column;
+        justify-content: center;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+
+        width: 4rem !important;
+        height: 4rem !important;
+        transition: 0.25s all;
+        &:hover {
+          color: var(--color--primary) !important;
+        }
+      }
+    }
+  }
+
+  &_hours_list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &_item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 22rem;
+
+      @include respond(tab-small) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &_instagram_list {
+    height: 65%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    list-style: none;
+
+    @include respond(tab-port) {
+      height: 19.1rem;
+    }
+
+    &_item_link {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-position: center;
+      background-size: cover;
+
+      &-1 {
+        background-image: url(../pics/footer_section/insta-1.jpg);
+      }
+      &-2 {
+        background-image: url(../pics/footer_section/insta-2.jpg);
+      }
+      &-3 {
+        background-image: url(../pics/footer_section/insta-3.jpg);
+      }
+      &-4 {
+        background-image: url(../pics/footer_section/insta-4.jpg);
+      }
+      &-5 {
+        background-image: url(../pics/footer_section/insta-5.jpg);
+      }
+      &-6 {
+        background-image: url(../pics/footer_section/insta-6.jpg);
+      }
+    }
+  }
+
+  &_form {
+    width: 100%;
+  }
+  // inputs
+  &_input {
+    width: 100%;
+    height: 5rem;
+
+    &-email {
+      background: rgba(255, 255, 255, 0.1);
+
+      padding: 6px 12px !important;
+
+      outline: none;
+      border: none;
+
+      font-family: Poppins, Arial, sans-serif;
+      font-size: 16px;
+      color: rgba(255, 255, 255);
+      font-weight: 600;
+      border-radius: 2px;
+
+      &::placeholder {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+
+  &_copyright {
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 1.5rem;
+    margin-top: 10rem !important;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    @include respond(tab-small) {
+      margin-top: 5rem !important;
+      width: 95%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0.5s color;
+
+      &:hover {
+        color: rgba(255, 255, 255);
+      }
+    }
+  }
+}
+.btn_gbr_main-footer {
+  padding: 0.6rem 1.6rem !important;
+  &:hover {
+    color: white !important;
+    border-color: white;
+  }
+}

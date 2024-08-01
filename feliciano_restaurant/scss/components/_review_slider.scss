@@ -1,0 +1,19 @@
+:root {
+  --swiper-pagination-color: var(--color--primary);
+  --swiper-pagination-left: auto;
+  --swiper-pagination-right: 8px;
+  --swiper-pagination-bottom: 0px;
+  --swiper-pagination-top: auto;
+}
+
+.review_slider {
+ cursor: pointer;
+  margin-top: 10rem !important;
+}
+
+.swiper-pagination > span {
+  margin-right: 1.2rem !important;
+
+  scale: 1.4;
+}
+

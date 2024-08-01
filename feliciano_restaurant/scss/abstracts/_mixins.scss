@@ -1,0 +1,68 @@
+/*
+$breakpoint argument choices:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+ORDER : Base + typography >  general layout + grid > page layout > component
+
+1em = 16px
+*/
+
+// RESPONSIVE
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == 'phone' {
+    @media only screen and (max-width: 37.5em) {
+      //600px
+      @content;
+    }
+  }
+
+  @if $breakpoint == 'tab-small' {
+    @media only screen and (max-width: 46.875em) {
+      //750px
+      @content;
+    }
+  }
+
+  @if $breakpoint == 'tab-port' {
+    @media only screen and (max-width: 61.875em) {
+      //990
+      @content;
+    }
+  }
+
+  @if $breakpoint == 'tab-land' {
+    @media only screen and (max-width: 81.25em) {
+      //1300px
+      @content;
+    }
+  }
+
+  @if $breakpoint == 'big-desktop' {
+    @media only screen and (min-width: 112.5em) {
+      //1800px
+      @content;
+    }
+  }
+}
+@mixin flex-center-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+@mixin flex-center-row {
+  display: flex;
+ 
+  align-items: center;
+  justify-content: start;
+}
+@mixin center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

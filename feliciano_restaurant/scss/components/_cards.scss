@@ -1,0 +1,351 @@
+.card_gbr {
+  // hero
+  &_hero {
+    @include flex-center-column;
+    height: 23rem;
+    background: transparent !important;
+
+    color: #fff;
+
+    &-img {
+      width: 10rem;
+      border-radius: 50% !important;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-title {
+      font-family: Poppins, Arial, sans-serif;
+      font-size: 1.8rem;
+      @include respond(tab-port) {
+        color: #000;
+      }
+    }
+
+    &-paragraph {
+      font-family: Poppins, Arial, sans-serif;
+      font-size: 1.4rem;
+      color: RGBA(255, 255, 255, 0.8);
+      @include respond(tab-port) {
+        color: var(--color--text--paragraph);
+      }
+    }
+  }
+
+  //*Menu cards
+
+  &_menu {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    @include respond(tab-port) {
+      width: 100%;
+      height: 23.2rem;
+    }
+
+    @include respond(tab-small) {
+      height: fit-content;
+    }
+
+    //*the phone style
+    @include respond(phone) {
+      flex-direction: column !important;
+    }
+
+    &-right {
+      flex-direction: row-reverse;
+    }
+    &_image {
+      width: 50%;
+      height: 100%;
+      @include respond(phone) {
+        width: 100%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &_content {
+      width: 50%;
+      height: 100%;
+      border: 1px solid #e6e6e6;
+      padding: 3rem 2rem !important;
+      position: relative;
+      //*the phone style
+      @include respond(phone) {
+        width: 100%;
+      }
+
+      &-price {
+        color: var(--color--primary);
+        font-family: Poppins, Arial, sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+
+        position: absolute;
+        right: 3rem;
+        top: 3rem;
+      }
+
+      &-title {
+        width: 50%;
+        @include respond(tab-port) {
+          width: 80%;
+        }
+
+        color: var(--color--text--header);
+        font-family: Poppins, Arial, sans-serif;
+        font-size: 2rem;
+        line-height: 3rem;
+        margin-bottom: 8px !important;
+        font-weight: 600;
+      }
+
+      &-recipe {
+        width: 100%;
+        max-width: 20rem;
+
+        @include respond(tab-port) {
+          max-width: 100%;
+        }
+        font-family: Poppins, sans-serif;
+        font-size: 1.7rem;
+        line-height: 3.4rem;
+
+        color: var(--color--text--paragraph);
+      }
+    }
+  }
+
+  &_team {
+    width: 25%;
+    padding: 0rem 1.5rem !important;
+    margin-bottom: 4rem !important;
+    @include respond(tab-port) {
+      width: 50%;
+    }
+
+    @include respond(tab-small) {
+      width: 80%;
+      height: 50rem;
+    }
+    @include respond(phone) {
+      width: 90%;
+    }
+
+    &_image {
+      height: 100%;
+      width: 100%;
+      border-radius: 5px;
+      overflow: hidden;
+      @include respond(tab-small) {
+        height: 80%;
+      }
+      @include respond(phone) {
+        height: 70%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include respond(tab-small) {
+          object-position: top;
+        }
+      }
+    }
+
+    // content box
+    &_content {
+      padding-top: 2.4rem !important;
+    }
+
+    &-name {
+      font-family: Poppins, sans-serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--color--text--header);
+    }
+
+    &-role {
+      font-family: Poppins, sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 8px !important;
+      color: var(--color--text--paragraph--light-2);
+    }
+
+    &_social {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 10px;
+      margin-bottom: 1.6rem !important;
+      li {
+        font-size: 17px;
+        color: var(--color--primary);
+        a {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  // review cards
+
+  &_review {
+    width: 100%;
+    height: 100%;
+
+    display: flex !important;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column !important;
+
+    margin-bottom: 5rem !important;
+
+    &_content {
+      @include flex-center-column;
+      text-align: center;
+      font-family: Poppins, sans-serif;
+      padding: 1.6rem !important;
+    }
+    // image box
+    &_image {
+      width: 13rem;
+      height: 13rem;
+      margin-bottom: 2.4rem !important;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      &_icon {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 3rem;
+        height: 3rem;
+        background: var(--color--primary);
+        border-radius: 50%;
+        color: white;
+        @include flex-center-column;
+        justify-content: center;
+        i {
+          font-size: 1.7rem;
+        }
+      }
+    }
+
+    &_paragraph {
+      font-size: 1.7rem;
+      line-height: 3rem;
+      color: var(--color--text--review--card);
+      margin-bottom: 0.4rem !important;
+      width: 75%;
+    }
+
+    &_name {
+      font-size: 2.2rem;
+      line-height: 4.4rem;
+    }
+    &_customer {
+      font-size: 12px;
+      line-height: 2.4rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+      color: var(--color--text--review--card);
+      text-transform: uppercase;
+    }
+  }
+
+  //* posts card
+
+  &_posts {
+    height: 43.4rem;
+    width: 33.33333%;
+    padding: 0 1.5rem !important;
+
+    @include respond(tab-port) {
+      width: 100%;
+      height: fit-content;
+      margin-bottom: 5rem !important;
+    }
+    &_image {
+      width: 100%;
+      height: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &_content {
+      background-color: #fff;
+      padding: 1.6rem 2.4rem 2.4rem 2.4rem !important;
+      font-family: Poppins, sans-serif;
+
+      // info
+      &_info {
+        & > span {
+          margin-right: 5px !important;
+          margin-bottom: 5px !important;
+          color: RGB(204, 204, 204);
+          font-size: 1.5rem;
+          line-height: 3rem;
+        }
+      }
+
+      &-title {
+        font-size: 2rem;
+        color: var(--color--text--header);
+        margin-bottom: 1.6rem !important;
+        font-weight: 600;
+      }
+
+      // comment box
+
+      &_comment {
+        font-size: 1.7rem;
+        line-height: 3.4rem;
+        color: var(--color--text--posts--card);
+        margin-bottom: 1.6rem !important;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-link {
+          font-size: 1.4rem;
+          color: black;
+          text-decoration: none;
+          transition: 0.25s color;
+          &:hover {
+            color: var(--color--primary);
+          }
+        }
+
+        &_right {
+          color: var(--color--text--paragraph--light-2);
+          transition: 0.25s color;
+          cursor: pointer;
+          &:hover {
+            color: var(--color--primary);
+          }
+        }
+      }
+    }
+  }
+}

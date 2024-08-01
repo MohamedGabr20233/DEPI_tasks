@@ -1,0 +1,9 @@
+@import '../abstracts/mixins';
+.u_section_padding {
+  padding: 11.9rem 0 !important;
+
+  @include respond(tab-small){
+    padding: 5rem 0 !important;
+  }
+  
+}

@@ -1,0 +1,294 @@
+@import '../abstracts/mixins';
+.hero {
+  &_top {
+    background: rgba(255, 255, 255, 0.05) !important;
+  }
+  &_section {
+    width: 100%;
+    position: relative;
+    height: 100dvh;
+    min-height: 50rem;
+
+    display: flex;
+    flex-flow: column;
+
+    &:hover > .btn_hero-left {
+      opacity: 1;
+      transform: translate(50%, -50%) scaleY(1.5);
+    }
+    &:hover > .btn_hero-right {
+      opacity: 1;
+      transform: translate(-50%, -50%) scaleY(1.5);
+    }
+  }
+
+  &_background-image {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.7) 50%), url(../pics/hero_Section/bg_1.jpg);
+    background-position: center;
+    background-size: cover;
+
+    animation: hero_fadeOut 0.8s 5.5s;
+  }
+
+  &_menu {
+    height: 23rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.3);
+    margin-top: auto !important;
+    color: #fff !important;
+    @include respond(tab-port) {
+      display: none !important;
+    }
+  }
+
+  &_menu-respond {
+    height: 23rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.3);
+    display: none !important;
+    @include respond(tab-port) {
+      display: flex !important;
+      color: black !important;
+      height: fit-content;
+    }
+  }
+}
+
+.restaurant {
+  &_section {
+    @include flex-center-column;
+    padding: 11.9rem 0 !important;
+
+    @include respond(tab-small) {
+      padding: 5rem 0 !important;
+    }
+  }
+
+  &_container {
+    display: flex;
+    align-items: start;
+    height: 56rem;
+
+    @include respond(tab-small) {
+      flex-flow: column-reverse !important;
+      gap: 2rem;
+      height: fit-content;
+    }
+  }
+  &_images {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    @include respond(tab-small) {
+      flex-flow: column-reverse !important;
+      width: 80%;
+    }
+
+    @include respond(tab-small) {
+      gap: 0rem;
+    }
+    img {
+      width: 44%;
+      height: 110%;
+      object-fit: cover;
+
+      @include respond(tab-port) {
+        height: 100%;
+      }
+      @include respond(tab-small) {
+        width: 100%;
+      }
+    }
+
+    &-2 {
+      position: relative;
+      top: 2.5rem;
+      @include respond(tab-port) {
+        top: 0;
+      }
+    }
+  }
+  &_content {
+    width: 40%;
+    @include respond(tab-small) {
+      width: 80%;
+    }
+  }
+}
+
+.counter {
+  &_section {
+    @include flex-center-column;
+    padding: 5rem 0 !important;
+  }
+  &_container {
+    display: flex;
+    align-items: start;
+    gap: 3rem;
+  }
+
+  &_boxes {
+    &-container {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+  }
+
+  &_box {
+    width: 22%;
+
+    @include respond(tab-port) {
+      width: 50%;
+      margin-bottom: 2rem !important;
+    }
+    @include respond(tab-small) {
+      text-align: center;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      margin-bottom: 2rem !important;
+      text-align: center;
+    }
+  }
+
+  &_text {
+    width: 20%;
+    @include respond(tab-port) {
+      width: 35%;
+    }
+    @include respond(tab-small) {
+      text-align: center;
+      width: 80%;
+    }
+  }
+}
+// service section
+
+.service {
+  &_section {
+    width: 100%;
+    background-color: var(--color--background--dark);
+    @include flex-center-column;
+  }
+
+  &_container {
+    width: 100%;
+    @include flex-center-column;
+    gap: 2rem;
+  }
+
+  &_content {
+    @include flex-center-row;
+    gap: 2rem;
+
+    @include respond(phone) {
+      @include flex-center-column;
+    }
+  }
+  &_box {
+    width: 32.3333333333%;
+    @include flex-center-column;
+    @include respond(phone) {
+      width: 80%;
+    }
+  }
+}
+
+// menu section
+
+.menu {
+  &_section {
+    @include flex-center-column;
+  }
+
+  &_container {
+    &-box {
+      height: 26.6rem;
+      display: flex;
+
+      @include respond(tab-port) {
+        height: fit-content;
+        @include flex-center-column;
+      }
+
+      @include respond(tab-small) {
+        width: 85%;
+      }
+    }
+  }
+}
+
+// team section
+.team {
+  &_section {
+    @include flex-center-column;
+    width: 100%;
+  }
+  &_container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include respond(tab-small) {
+      height: fit-content;
+    }
+  }
+}
+
+// booking section
+.book {
+  &_section {
+    @include flex-center-column;
+    width: 100%;
+    background-image: url(../pics/hero_Section/bg_3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
+
+// review section
+
+.review {
+  &_section {
+    @include flex-center-column;
+    width: 100%;
+  }
+  &_container {
+    width: 100%;
+  }
+}
+
+// posts section
+
+.posts {
+  &_section {
+    @include flex-center-column;
+    width: 100%;
+    background-color: var(--color--background--dark);
+  }
+  &_container {
+    @include flex-center-row;
+    width: 100%;
+    margin-top: 1rem !important;
+    padding: 0 10rem !important;
+
+    @include respond(tab-land) {
+      padding: 0 2rem !important;
+    }
+
+    @include respond(tab-port) {
+      @include flex-center-column;
+    }
+  }
+}

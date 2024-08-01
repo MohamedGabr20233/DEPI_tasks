@@ -1,0 +1,34 @@
+// JS
+.hero_fade-in {
+  animation: hero_fadeIn 0.5s linear;
+}
+
+.hero_fade-out {
+  animation: hero_fadeOut 0.8s linear;
+}
+
+// nav
+
+.navbar-scroll {
+  transition: 0.25s all;
+
+  position: fixed !important;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  z-index: 100;
+
+  border-bottom: none;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.196);
+}
+.nav-item .nav-link-scroll {
+  color: black !important ;
+  &:focus {
+    color: var(--color--primary) !important;
+  }
+}
+.container .nav-link-scroll {
+  transition: 0.25s all;
+  color: black !important ;
+}
+

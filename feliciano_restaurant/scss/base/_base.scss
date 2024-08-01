@@ -1,0 +1,76 @@
+:root {
+  --color--primary: rgb(200, 169, 126);
+
+  // fonts
+  --color--text--header: rgb(51, 51, 51);
+
+  --color--text--paragraph: rgba(0, 0, 0, 0.8);
+  --color--text--paragraph--light: rgb(128, 128, 128);
+  --color--text--paragraph--light-2: rgba(0, 0, 0, 0.3);
+
+  --color--text--review--card: rgb(102, 102, 102);
+  --color--text--posts--card: rgb(102, 102, 102);
+
+  // color
+  --color--black: #000;
+
+  // bg
+
+  --color--background--dark: #fafafa;
+}
+
+html {
+  font-size: 62.5%; //=> 10px
+  
+  //+1800px
+  @include respond(big-desktop) {
+    font-size: 68.75%; //=> 12px
+  }
+
+  @include respond(tab-port) {
+    font-size: 56.25%; //=> 9px
+  }
+
+ 
+}
+
+*,
+*::after,
+*::before {
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+body {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: Poppins, sans-serif;
+}
+.container_responsive-width {
+  max-width: 130rem;
+  padding: 1.6rem 1.2rem;
+  width: 100%;
+  // 1300px
+  @include respond(tab-land) {
+    max-width: 112.4rem;
+  }
+
+  //1200px
+  @media (max-width: 1200px) {
+    max-width: 94rem;
+  }
+  // 990px
+  @include respond(tab-port) {
+    max-width: 70rem;
+  }
+
+  @include respond(tab-small) {
+    @include flex_center-column;
+  }
+}
+
+.container_responsive-width--slider {
+  flex-direction: row !important;
+}

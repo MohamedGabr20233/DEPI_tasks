@@ -1,0 +1,118 @@
+@import '../abstracts/mixins';
+.book {
+  &_form {
+    position: relative;
+    left: -10%;
+    @include flex_center_column;
+    width: 80%;
+    max-width: 60rem;
+
+    padding: 2.4rem 4.8rem 4.8rem 4.8rem !important;
+    background: #fff;
+
+    @include respond(tab-small) {
+      left: 0;
+      width: 90%;
+    }
+  }
+
+  &_header_special {
+    white-space: nowrap;
+    margin-top: -6rem !important;
+  }
+
+  &_content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  &_input_area {
+    width: 45%;
+    @include respond(phone) {
+      width: 100%;
+      height: 7rem;
+      margin-bottom: 1.6rem !important;
+    }
+
+    &-text {
+      font-family: Poppins, Arial, sans-serif;
+      color: black;
+
+      font-size: 1.7rem;
+      line-height: 3.4rem;
+      font-weight: 600;
+      margin-bottom: 8px !important;
+    }
+
+    &-textinput {
+      width: 100%;
+      padding: 12px 6px !important;
+      outline: none !important;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+
+      //   text
+      font-family: Poppins, Arial, sans-serif;
+      color: black;
+      font-size: 1.6rem;
+
+      &-select {
+        cursor: default;
+        position: relative;
+      }
+    }
+  }
+}
+
+// the selection
+.book_input_area-select {
+  position: relative;
+  &-btn {
+    position: absolute;
+    right: 1rem;
+    top: 40%;
+    font-size: 2rem !important;
+    transform: rotate(90deg) translate(-50%, 0);
+    z-index: 100;
+    color: var(--color--text--paragraph--light);
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.25s all;
+    &:hover {
+      color: var(--color--primary);
+    }
+    &:focus + .book_person_options {
+      display: block;
+    }
+  }
+}
+.book_person_options {
+  position: absolute;
+  bottom: -13.3rem;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  background: #fff;
+  z-index: 100;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  font-family: Poppins, Arial, sans-serif;
+  color: black;
+
+  font-size: 1.4rem;
+
+  font-weight: 600;
+  margin-bottom: 8px !important;
+
+  display: none;
+
+  &_value {
+    padding: 0.5rem 0.5rem !important;
+    cursor: pointer;
+    &:hover {
+      background: var(--color--primary);
+      color: #fff;
+    }
+  }
+}

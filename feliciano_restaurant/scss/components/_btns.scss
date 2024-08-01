@@ -1,0 +1,54 @@
+.btn_gbr,
+.btn {
+  // hero section btns
+  &_hero {
+    position: absolute;
+    top: 50%;
+    color: #fff !important;
+    font-size: 4rem !important;
+
+    transition: 0.4s all !important;
+
+    opacity: 0;
+    &-left {
+      left: 0;
+      transform: translate(-50%, -50%) scaleY(1.5);
+    }
+
+    &-right {
+      right: 0;
+      transform: translate(50%, -50%) scaleY(1.5);
+    }
+
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+
+  &_main {
+    font-family: Poppins, sans-serif;
+    font-size: 1.6rem;
+
+    padding: 6px 12px !important;
+    margin-top: 1rem !important;
+
+    background: var(--color--primary);
+
+    color: #fff;
+    border: 1px solid var(--color--primary);
+
+    transition: 0.25s all;
+
+    &:hover {
+      background: transparent;
+      color: var(--color--primary);
+    }
+
+
+    &-book{
+      padding: 1.6rem 4.8rem !important;
+      margin: auto !important;;
+    }
+  }
+
+}
